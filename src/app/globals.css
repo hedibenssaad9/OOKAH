@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #08080a;
+  --color-ink-soft: #0f0f12;
+  --color-surface: #16161a;
+  --color-surface-2: #1d1d22;
+  --color-line: #2a2a30;
+
+  --color-cream: #f4f0e6;
+  --color-cream-dim: #c9c4b8;
+  --color-muted: #8c887f;
+
+  --color-gold: #c9a24a;
+  --color-gold-bright: #e8c979;
+  --color-gold-dim: #8a7038;
+
+  --color-ember: #9a4a33;
+  --color-ember-bright: #c66a45;
+
+  --shadow-gold: 0 0 0 1px rgba(201, 162, 74, 0.25);
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-surface: var(--color-surface);
+  --color-surface-2: var(--color-surface-2);
+  --color-line: var(--color-line);
+
+  --color-cream: var(--color-cream);
+  --color-cream-dim: var(--color-cream-dim);
+  --color-muted: var(--color-muted);
+
+  --color-gold: var(--color-gold);
+  --color-gold-bright: var(--color-gold-bright);
+  --color-gold-dim: var(--color-gold-dim);
+
+  --color-ember: var(--color-ember);
+  --color-ember-bright: var(--color-ember-bright);
+
+  --font-display: var(--font-syne);
+  --font-sans: var(--font-manrope);
+
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-cream);
+  font-family: var(--font-sans), sans-serif;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-ink);
+}
+
+.font-display {
+  font-family: var(--font-display), sans-serif;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(115deg, #e8c979 0%, #c9a24a 45%, #8a7038 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.noise-overlay {
+  position: relative;
+}
+
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+.grid-lines {
+  background-image: linear-gradient(
+      to right,
+      rgba(201, 162, 74, 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(201, 162, 74, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

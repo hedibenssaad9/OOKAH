@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Logo } from "./Logo";
 
 export function IntroLoader() {
   const [show, setShow] = useState(false);
@@ -30,18 +31,17 @@ export function IntroLoader() {
           className="fixed inset-0 z-[200] flex items-center justify-center bg-ink"
         >
           <motion.div
-            initial={{ opacity: 0, letterSpacing: "0.05em" }}
-            animate={{ opacity: 1, letterSpacing: "0.15em" }}
+            initial={{ opacity: 0, scale: 0.94 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display text-3xl text-cream"
           >
-            OOKAH<span className="text-gold">.</span>
+            <Logo />
           </motion.div>
           <motion.div
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute bottom-1/3 h-px w-24 origin-center bg-gradient-to-r from-transparent via-gold to-transparent"
+            className="absolute bottom-1/3 h-px w-24 origin-center bg-gradient-to-r from-transparent via-violet-bright to-transparent"
           />
         </motion.div>
       )}

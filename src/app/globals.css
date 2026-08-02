@@ -1,24 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --color-ink: #08080a;
-  --color-ink-soft: #0f0f12;
-  --color-surface: #16161a;
-  --color-surface-2: #1d1d22;
-  --color-line: #2a2a30;
+  /* Grounds — near-black carrying a violet cast, as in the OOKAH app */
+  --color-ink: #09070d;
+  --color-ink-soft: #0e0b14;
+  --color-surface: #15111d;
+  --color-surface-2: #1c1727;
+  --color-line: #2a2338;
 
-  --color-cream: #f4f0e6;
-  --color-cream-dim: #c9c4b8;
-  --color-muted: #8c887f;
+  --color-cream: #f5f2ec;
+  --color-cream-dim: #b6afc0;
+  --color-muted: #7d7589;
 
-  --color-gold: #c9a24a;
-  --color-gold-bright: #e8c979;
-  --color-gold-dim: #8a7038;
+  /* Gold — logo, icons, rules, editorial accents */
+  --color-gold: #c89a3f;
+  --color-gold-bright: #e5bc6b;
+  --color-gold-dim: #8a6a2b;
 
-  --color-ember: #9a4a33;
-  --color-ember-bright: #c66a45;
+  /* Violet — the brand's action colour */
+  --color-violet: #9333ea;
+  --color-violet-bright: #a855f7;
+  --color-violet-deep: #6d21b0;
 
-  --shadow-gold: 0 0 0 1px rgba(201, 162, 74, 0.25);
+  /* Status / destructive — a warm rose that sits beside violet without clashing */
+  --color-ember: #8d3355;
+  --color-ember-bright: #d4749b;
 }
 
 @theme inline {
@@ -36,10 +42,14 @@
   --color-gold-bright: var(--color-gold-bright);
   --color-gold-dim: var(--color-gold-dim);
 
+  --color-violet: var(--color-violet);
+  --color-violet-bright: var(--color-violet-bright);
+  --color-violet-deep: var(--color-violet-deep);
+
   --color-ember: var(--color-ember);
   --color-ember-bright: var(--color-ember-bright);
 
-  --font-display: var(--font-syne);
+  --font-display: var(--font-cormorant);
   --font-sans: var(--font-manrope);
 
   --animate-marquee: marquee 28s linear infinite;
@@ -76,8 +86,8 @@ body {
 }
 
 ::selection {
-  background: var(--color-gold);
-  color: var(--color-ink);
+  background: var(--color-violet);
+  color: var(--color-cream);
 }
 
 ::-webkit-scrollbar {
@@ -96,7 +106,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gold-dim);
+  background: var(--color-violet-deep);
 }
 
 * {
@@ -104,16 +114,23 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-violet-bright);
   outline-offset: 2px;
 }
 
 .font-display {
-  font-family: var(--font-display), sans-serif;
+  font-family: var(--font-display), Georgia, serif;
 }
 
 .text-gradient-gold {
-  background: linear-gradient(115deg, #e8c979 0%, #c9a24a 45%, #8a7038 100%);
+  background: linear-gradient(115deg, #e5bc6b 0%, #c89a3f 48%, #8a6a2b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-violet {
+  background: linear-gradient(115deg, #c99bff 0%, #a855f7 45%, #7c2ecb 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -136,10 +153,10 @@ body {
 .grid-lines {
   background-image: linear-gradient(
       to right,
-      rgba(201, 162, 74, 0.06) 1px,
+      rgba(200, 154, 63, 0.05) 1px,
       transparent 1px
     ),
-    linear-gradient(to bottom, rgba(201, 162, 74, 0.06) 1px, transparent 1px);
+    linear-gradient(to bottom, rgba(200, 154, 63, 0.05) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 

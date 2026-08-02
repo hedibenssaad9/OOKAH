@@ -56,7 +56,8 @@ export function SmokeCanvas({ className }: { className?: string }) {
         vy: -0.25 - Math.random() * 0.35,
         life: 0,
         maxLife: 500 + Math.random() * 400,
-        hue: Math.random() > 0.5 ? 42 : 18,
+        // gold (≈42°) and the brand violet (≈275°), roughly two thirds violet
+        hue: Math.random() > 0.65 ? 42 : 275,
       });
     }
 
@@ -101,8 +102,8 @@ export function SmokeCanvas({ className }: { className?: string }) {
             p.y,
             p.r
           );
-          gradient.addColorStop(0, `hsla(${p.hue}, 60%, 65%, ${alpha})`);
-          gradient.addColorStop(1, `hsla(${p.hue}, 60%, 55%, 0)`);
+          gradient.addColorStop(0, `hsla(${p.hue}, 68%, 62%, ${alpha})`);
+          gradient.addColorStop(1, `hsla(${p.hue}, 68%, 52%, 0)`);
           ctx!.fillStyle = gradient;
           ctx!.beginPath();
           ctx!.arc(p.x, p.y, p.r, 0, Math.PI * 2);

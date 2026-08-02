@@ -163,7 +163,7 @@ export default function Home() {
         <Reveal>
           <div className="relative overflow-hidden rounded-[2.5rem] border border-gold/25 bg-gradient-to-br from-surface via-ink-soft to-ink px-8 py-14 text-center sm:px-16">
             <div className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-gold/20 blur-[100px]" />
-            <div className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-ember/20 blur-[100px]" />
+            <div className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-violet/25 blur-[100px]" />
             <SmokeCanvas className="pointer-events-none absolute inset-0 opacity-70" />
             <div className="relative">
               <Eyebrow>Réseau Chichin</Eyebrow>

@@ -57,7 +57,7 @@ export default async function ProductPage({
             >
               <CaseArt variant={product.variant} className="w-2/3" />
               {product.stock === "Précommande" && (
-                <span className="absolute left-5 top-5 rounded-full border border-ember/40 bg-ink/70 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-ember-bright backdrop-blur">
+                <span className="absolute left-5 top-5 rounded-full border border-violet-bright/45 bg-ink/70 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-violet-bright backdrop-blur">
                   Précommande
                 </span>
               )}

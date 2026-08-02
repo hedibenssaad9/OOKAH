@@ -58,7 +58,7 @@ export function CustomCursor() {
       animate={{ scale: active ? 2.4 : 1 }}
       transition={{ scale: { type: "spring", stiffness: 300, damping: 20 } }}
     >
-      <div className="h-3 w-3 rounded-full bg-gold shadow-[0_0_20px_6px_rgba(201,162,74,0.55)]" />
+      <div className="h-3 w-3 rounded-full bg-violet-bright shadow-[0_0_22px_7px_rgba(168,85,247,0.6)]" />
     </motion.div>
   );
 }

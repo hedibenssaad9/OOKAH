@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Mail, MapPin } from "lucide-react";
+import { Logo } from "./Logo";
 
 function InstagramIcon({ size = 16 }: { size?: number }) {
   return (
@@ -26,8 +27,8 @@ export function Footer() {
     <footer className="border-t border-line bg-ink-soft">
       <div className="mx-auto grid max-w-7xl gap-12 px-6 py-16 md:grid-cols-4 md:px-10 lg:px-16">
         <div className="md:col-span-2">
-          <Link href="/" className="font-display text-2xl tracking-[0.15em] text-cream">
-            OOKAH<span className="text-gold">.</span>
+          <Link href="/" aria-label="OOKAH — accueil">
+            <Logo compact />
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream-dim">
             Mallettes premium conçues et fabriquées pour les salons Chichin et les

@@ -9,6 +9,7 @@ import { useCartStore, cartCount } from "@/lib/cart-store";
 import { useHydrated } from "@/lib/use-hydrated";
 import { ButtonLink } from "./Button";
 import { Magnetic } from "./Magnetic";
+import { Logo } from "./Logo";
 
 const LINKS = [
   { href: "/boutique", label: "Boutique" },
@@ -48,8 +49,8 @@ export function Navbar() {
       )}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10 lg:px-16">
-        <Link href="/" className="font-display text-2xl tracking-[0.15em] text-cream">
-          OOKAH<span className="text-gold">.</span>
+        <Link href="/" aria-label="OOKAH — accueil">
+          <Logo compact />
         </Link>
 
         <nav className="hidden items-center gap-9 md:flex">

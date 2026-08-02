@@ -4,6 +4,9 @@ import { Section, Eyebrow } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { ProductCard } from "@/components/ProductCard";
 import { CaseArt } from "@/components/CaseArt";
+import { TiltCard } from "@/components/TiltCard";
+import { Magnetic } from "@/components/Magnetic";
+import { SmokeCanvas } from "@/components/SmokeCanvas";
 import { products } from "@/lib/products";
 
 const MARQUEE_ITEMS = [
@@ -46,6 +49,7 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-1/2 top-0 h-[600px] w-[900px] -translate-x-1/2 rounded-full bg-gold/10 blur-[140px]" />
         </div>
+        <SmokeCanvas className="pointer-events-none absolute inset-0" />
 
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-20 md:px-10 md:pt-28 lg:grid-cols-2 lg:px-16 lg:pt-32">
           <Reveal>
@@ -60,12 +64,16 @@ export default function Home() {
               premium, et une marge enfin de votre côté.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <ButtonLink href="/boutique">
-                Découvrir la collection <ArrowRight size={16} />
-              </ButtonLink>
-              <ButtonLink href="/pro" variant="outline">
-                Je tiens un point de vente Chichin
-              </ButtonLink>
+              <Magnetic>
+                <ButtonLink href="/boutique">
+                  Découvrir la collection <ArrowRight size={16} />
+                </ButtonLink>
+              </Magnetic>
+              <Magnetic>
+                <ButtonLink href="/pro" variant="outline">
+                  Je tiens un point de vente Chichin
+                </ButtonLink>
+              </Magnetic>
             </div>
 
             <div className="mt-14 grid max-w-md grid-cols-3 gap-6 border-t border-line pt-8">
@@ -86,7 +94,9 @@ export default function Home() {
 
           <Reveal delay={0.15} className="relative flex items-center justify-center">
             <div className="absolute h-72 w-72 rounded-full bg-gold/15 blur-[100px]" />
-            <CaseArt variant="or" className="relative w-full max-w-md" />
+            <TiltCard className="relative w-full max-w-md">
+              <CaseArt variant="or" className="w-full" />
+            </TiltCard>
           </Reveal>
         </div>
 
@@ -154,6 +164,7 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-[2.5rem] border border-gold/25 bg-gradient-to-br from-surface via-ink-soft to-ink px-8 py-14 text-center sm:px-16">
             <div className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-gold/20 blur-[100px]" />
             <div className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-ember/20 blur-[100px]" />
+            <SmokeCanvas className="pointer-events-none absolute inset-0 opacity-70" />
             <div className="relative">
               <Eyebrow>Réseau Chichin</Eyebrow>
               <h2 className="mx-auto mt-4 max-w-2xl font-display text-3xl text-cream sm:text-4xl">
@@ -164,9 +175,11 @@ export default function Home() {
                 accompagnement dédié. Faites votre demande d&rsquo;accès à l&rsquo;espace Pro.
               </p>
               <div className="mt-8 flex justify-center">
-                <ButtonLink href="/pro">
-                  Demander mon accès Pro <ArrowRight size={16} />
-                </ButtonLink>
+                <Magnetic>
+                  <ButtonLink href="/pro">
+                    Demander mon accès Pro <ArrowRight size={16} />
+                  </ButtonLink>
+                </Magnetic>
               </div>
             </div>
           </div>

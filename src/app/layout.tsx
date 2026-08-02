@@ -3,6 +3,8 @@ import { Syne, Manrope } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { CustomCursor } from "@/components/CustomCursor";
+import { IntroLoader } from "@/components/IntroLoader";
 
 const syne = Syne({
   variable: "--font-syne",
@@ -33,6 +35,8 @@ export default function RootLayout({
       className={`${syne.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-ink text-cream">
+        <IntroLoader />
+        <CustomCursor />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

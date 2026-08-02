@@ -7,6 +7,7 @@ import { Reveal } from "@/components/Reveal";
 import { Eyebrow, Section } from "@/components/Section";
 import { AddToCart } from "@/components/AddToCart";
 import { ProductCard } from "@/components/ProductCard";
+import { TiltCard } from "@/components/TiltCard";
 import { getProductBySlug, products, formatPrice } from "@/lib/products";
 
 export function generateStaticParams() {
@@ -50,14 +51,17 @@ export default async function ProductPage({
 
         <div className="mt-8 grid gap-14 lg:grid-cols-2">
           <Reveal className="grid gap-4">
-            <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-3xl border border-line bg-ink-soft grid-lines">
+            <TiltCard
+              intensity={12}
+              className="flex aspect-square items-center justify-center overflow-hidden rounded-3xl border border-line bg-ink-soft grid-lines"
+            >
               <CaseArt variant={product.variant} className="w-2/3" />
               {product.stock === "Précommande" && (
                 <span className="absolute left-5 top-5 rounded-full border border-ember/40 bg-ink/70 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-ember-bright backdrop-blur">
                   Précommande
                 </span>
               )}
-            </div>
+            </TiltCard>
             <div className="grid grid-cols-3 gap-4">
               {["ivoire", "onyx", "ember"].map((v, i) => (
                 <div

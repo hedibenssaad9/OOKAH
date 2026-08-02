@@ -4,6 +4,9 @@ import { Section, Eyebrow } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { CaseArt } from "@/components/CaseArt";
 import { ButtonLink } from "@/components/Button";
+import { TiltCard } from "@/components/TiltCard";
+import { Magnetic } from "@/components/Magnetic";
+import { SmokeCanvas } from "@/components/SmokeCanvas";
 
 export const metadata: Metadata = {
   title: "La marque — OOKAH",
@@ -33,6 +36,7 @@ export default function MarquePage() {
     <div>
       <section className="relative overflow-hidden border-b border-line grid-lines">
         <div className="pointer-events-none absolute right-0 top-0 h-[500px] w-[700px] rounded-full bg-gold/10 blur-[140px]" />
+        <SmokeCanvas className="pointer-events-none absolute inset-0" />
         <Section className="relative grid gap-12 pb-16 pt-20 lg:grid-cols-2 lg:items-center">
           <Reveal>
             <Eyebrow>La marque</Eyebrow>
@@ -48,11 +52,15 @@ export default function MarquePage() {
               niveau d&rsquo;exigence.
             </p>
             <div className="mt-8">
-              <ButtonLink href="/boutique">Découvrir la collection</ButtonLink>
+              <Magnetic>
+                <ButtonLink href="/boutique">Découvrir la collection</ButtonLink>
+              </Magnetic>
             </div>
           </Reveal>
           <Reveal delay={0.15} className="flex items-center justify-center">
-            <CaseArt variant="ember" className="w-full max-w-sm" />
+            <TiltCard className="w-full max-w-sm" intensity={10}>
+              <CaseArt variant="ember" className="w-full" />
+            </TiltCard>
           </Reveal>
         </Section>
       </section>
@@ -78,7 +86,9 @@ export default function MarquePage() {
       <Section className="border-t border-line bg-ink-soft">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <Reveal className="order-2 lg:order-1 flex items-center justify-center">
-            <CaseArt variant="ivoire" className="w-full max-w-sm" />
+            <TiltCard className="w-full max-w-sm" intensity={10}>
+              <CaseArt variant="ivoire" className="w-full" />
+            </TiltCard>
           </Reveal>
           <Reveal delay={0.1} className="order-1 lg:order-2">
             <Eyebrow>Notre engagement réseau</Eyebrow>

@@ -8,6 +8,7 @@ import clsx from "clsx";
 import { useCartStore, cartCount } from "@/lib/cart-store";
 import { useHydrated } from "@/lib/use-hydrated";
 import { ButtonLink } from "./Button";
+import { Magnetic } from "./Magnetic";
 
 const LINKS = [
   { href: "/boutique", label: "Boutique" },
@@ -70,9 +71,11 @@ export function Navbar() {
 
         <div className="flex items-center gap-4">
           <div className="hidden lg:block">
-            <ButtonLink href="/pro" variant="outline">
-              Devenir revendeur
-            </ButtonLink>
+            <Magnetic strength={0.25}>
+              <ButtonLink href="/pro" variant="outline">
+                Devenir revendeur
+              </ButtonLink>
+            </Magnetic>
           </div>
           <Link
             href="/panier"

@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { CaseArt } from "./CaseArt";
 import { Product, formatPrice } from "@/lib/products";
 import { Reveal } from "./Reveal";
+import { TiltCard } from "./TiltCard";
 
 export function ProductCard({ product, delay = 0 }: { product: Product; delay?: number }) {
   return (
@@ -10,13 +11,17 @@ export function ProductCard({ product, delay = 0 }: { product: Product; delay?: 
       <Link
         href={`/boutique/${product.slug}`}
         className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-surface transition-all duration-500 hover:-translate-y-1 hover:border-gold/50"
+        data-cursor-interactive
       >
-        <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-ink-soft grid-lines">
+        <TiltCard
+          intensity={8}
+          className="flex aspect-[4/3] items-center justify-center overflow-hidden bg-ink-soft grid-lines"
+        >
           <CaseArt variant={product.variant} className="w-3/5" animate={false} />
           <span className="absolute left-4 top-4 rounded-full border border-gold/30 bg-ink/70 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-gold backdrop-blur">
             {product.gamme}
           </span>
-        </div>
+        </TiltCard>
 
         <div className="flex flex-1 flex-col gap-3 p-6">
           <div className="flex items-start justify-between gap-3">

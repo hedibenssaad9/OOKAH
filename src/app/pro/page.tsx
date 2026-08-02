@@ -5,6 +5,7 @@ import { CheckCircle2, ArrowRight, Percent, Truck, HeadphonesIcon, Store } from 
 import { Section, Eyebrow } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/Button";
+import { SmokeCanvas } from "@/components/SmokeCanvas";
 
 const inputClass =
   "w-full rounded-xl border border-line bg-ink-soft px-4 py-3 text-sm text-cream placeholder:text-muted outline-none transition-colors focus:border-gold";
@@ -50,6 +51,7 @@ export default function ProPage() {
     <div>
       <section className="relative overflow-hidden border-b border-line grid-lines">
         <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-gold/10 blur-[140px]" />
+        <SmokeCanvas className="pointer-events-none absolute inset-0" />
         <Section className="relative pb-16 pt-20">
           <Reveal className="mx-auto max-w-2xl text-center">
             <Eyebrow>Espace Pro — Réseau Chichin</Eyebrow>
